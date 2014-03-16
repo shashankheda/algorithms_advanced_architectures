@@ -1,0 +1,186 @@
+/* Parallel Trapezoidal Rule
+ *
+ * Output: Estimation of the integral from a to b of f(x)
+ *         using the simpson's rule.
+ *
+ * Algorithm:
+ *    1.  Each process calculates "its" interval of
+ *        integration.
+ *    2.  Each process estimates the integral of f(x)
+ *        over its interval using the trapezoidal rule.
+ *    3a. Each process != 0 sends its integral to 0.
+ *    3b. Process 0 sums the calculations received from
+ *        the individual processes and prints the result.
+ *
+ * Notes:  
+ *    1.  f(x), a, b, n are all hardwired.
+ *    2.  The number of processes (p) should divide evenly by
+ *        the number of trapezoids (n = 10000000)
+ */
+
+#include <stdio.h>
+#include <math.h>
+#include "mpi.h"
+#include "mpe.h"
+#define Z1(X,Y) (5*( (X)*(X) + (Y)*(Y) ))
+#define Z2(X,Y) (6-7*(X)*(X)-(Y)*(Y))
+#define HEIGHT(X,Y) (Z1(X,Y) - Z2(X,Y))
+//#define SURFACE(X,Y) (2*(X)*(X) + (Y)*(Y) - 1)
+//#define f(x) log(x + 1)/(x*x + 4*x + 3)
+
+/* Calculate local integral  */
+//double Trap(double, double, long int, double, double, double);
+void roots(double*, double*, double);
+int main(int argc, char** argv)
+{
+  int         my_rank;          /* My process rank           */
+  int         p;                /* The number of processes   */
+  double      ax,ay;            /* Left endpoint             */
+  double      bx,by;            /* Right endpoint            */
+  double      ht;               /* Difference in heights     */
+  long int    nx,ny;            /* Number of trapezoids      */
+  double      hx,hy;            /* Trapezoid base length     */
+  double      local_ax;         /* Left endpoint my process  */
+  double      local_bx;         /* Right endpoint my process */
+  long int    local_nx;         /* Number of trapezoids for  */
+                                /* my calculation            */
+  double      integral=0;       /* Integral over my interval */
+  double      total_integral=0; /* Total integral            */
+  int         source;           /* Process sending integral  */
+  int         dest = 0;         /* All messages go to 0      */
+  int         tag = 0;
+  double      x,y;              /* Iterators for loops       */
+  MPI_Status  status;
+  int event1a, event1b;
+  double startTime, endTime, timeDifference;
+  //double procStartTime, procEndTime, procTime;
+  
+  printf("Enter nx = ");
+  scanf("%ld",&nx);
+  printf("%ld\nEnter ny = ", nx);
+  scanf("%ld",&ny); 
+  printf("%ld\n", ny);
+  fflush(stdin);
+
+  /* Let the system do what it needs to start up MPI */
+  MPI_Init(&argc, &argv);
+  /* Get my process rank */
+  MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+  /* Find out how many processes are being used */
+  MPI_Comm_size(MPI_COMM_WORLD, &p);  
+
+  printf("Total number of processes = %d; and rank = %d\n", p, my_rank);
+
+  event1a = MPE_Log_get_event_number(); 
+  event1b = MPE_Log_get_event_number();
+
+  MPE_Describe_state(event1a, event1b, "Compute", "red");
+
+  if (my_rank==0)
+	  startTime=MPI_Wtime();
+  //nx=10;ny=10;
+  ax=(-1)/sqrt(2); bx=-ax;
+  hx = (bx - ax) / nx;  /* h is the same for all processes */
+  local_nx = nx / p;    /* So is the number of trapezoids */
+
+  /* Length of each process' interval of integration = local_n * h.
+   * So my interval starts at: */
+  MPE_Log_event(event1a, 0, "start compute");
+  local_ax = ax + my_rank * local_nx * hx;
+  local_bx = local_ax + local_nx * hx;
+  printf("local_ax = %lf and local_bx = %lf\t", local_ax, local_bx);
+  for(x=local_ax; x<local_bx; x+=hx)
+  {
+    //printf("local_ax = %lf and local_bx = %lf\t", local_ax, local_bx);
+    roots(&ay, &by, x);
+    hy = (by-ay)/ny;
+    for(y = ay; y < by; y += hy)
+    {
+      ht = HEIGHT(x,y);
+      integral += ( (ht>0) ? ht : -ht) * hx * hy; 
+    }
+    printf("integral by process %d is = %lf\n", my_rank, integral);
+    //integral = integrate(local_a, local_b, local_n, h, ay, by);
+    fflush(stdout);
+  }
+  MPE_Log_event(event1b, 0, "end compute");
+
+  /* Add up the integrals calculated by each process */
+ 
+  if (my_rank == 0)
+  {
+    total_integral = integral;
+    for (source=1; source<p; source++)
+    {
+      MPI_Recv(&integral, 1, MPI_DOUBLE, source, tag, MPI_COMM_WORLD, &status);
+      total_integral = total_integral + integral;
+      printf("The integral by process %d is = %lf\n",source, integral);
+    }
+  }
+  else MPI_Send(&integral, 1, MPI_DOUBLE, dest, tag, MPI_COMM_WORLD);
+  
+
+  //MPI_Reduce(&integral, &total_integral, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+
+  if (my_rank==0)
+  {
+    endTime = MPI_Wtime();
+    timeDifference = endTime - startTime;	  
+  }
+
+  /* Print the result */
+  if(my_rank == 0)
+  {
+    printf("With nx = %ld and ny = %ld,", nx, ny);
+    printf("our estimate of the quadrature is %.25lf\n", total_integral);
+    printf("Time taken for whole computation = %.25lf seconds\n", timeDifference);
+  }  
+
+  /* Shut down MPI */
+  MPI_Finalize();
+  
+  return 0;
+} /* main */
+
+/*
+double integrate(double    local_a  ,
+		 double    local_b  ,
+		 long int  local_n  ,
+		 double    h        ,
+		 double    global_a ,
+		 double    global_b  )
+{
+  double integral;   
+  double x;
+  long int i;
+
+  x = local_a;
+  for(i=0; i<local_n; i++)
+  {
+    if(i %2 ==0 && x!= global_a && x!=global_b)
+    {
+      integral = integral + 2*f(x);
+    }
+    else if(i%2 != 0 && x !=global_a && x!=global_b)
+    {
+      integral = integral + 4*f(x);
+    }
+    else if(x==global_a || x==global_b)
+    {
+      integral = integral + f(x);
+    }
+    x = x + h;
+  }
+
+  return integral;
+} // integrate 
+*/
+
+/********** Generate ay and by for given x *********/
+void roots(double *ay, double *by, double x)
+{
+  double a;
+  a = sqrt(1-2*x*x);
+  if(a>0) { *ay = -a; *by = a;} 
+  else { *ay = a; *by = -a;}
+}

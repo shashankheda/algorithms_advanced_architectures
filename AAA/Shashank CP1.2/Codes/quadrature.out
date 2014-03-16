@@ -1,0 +1,22 @@
+With [nx ny] = [10 10], total n = 100, our estimate of the quadrature is 6.5825238000290919870849393
+Time taken for whole computation = 0.0000121593475341796875000 seconds
+With [nx ny] = [100 10], total n = 1000, our estimate of the quadrature is 6.6549821883444018055797642
+Time taken for whole computation = 0.0000259876251220703125000 seconds
+With [nx ny] = [100 100], total n = 10000, our estimate of the quadrature is 6.7704023434213898013922517
+Time taken for whole computation = 0.0000789165496826171875000 seconds
+With [nx ny] = [100 1000], total n = 100000, our estimate of the quadrature is 6.7710726802870713214588250
+Time taken for whole computation = 0.0003268718719482421875000 seconds
+With [nx ny] = [1000 1000], total n = 1000000, our estimate of the quadrature is 6.7201275397155297852691547
+Time taken for whole computation = 0.0019659996032714843750000 seconds
+With [nx ny] = [10000 1000], total n = 10000000, our estimate of the quadrature is 6.6690315681112108947559136
+Time taken for whole computation = 0.0167670249938964843750000 seconds
+With [nx ny] = [10000 10000], total n = 100000000, our estimate of the quadrature is 6.6690381704588457267846024
+Time taken for whole computation = 0.1894538402557373046875000 seconds
+With [nx ny] = [10000 100000], total n = 1000000000, our estimate of the quadrature is 6.6690382364811231497014887
+Time taken for whole computation = 1.0745589733123779296875000 seconds
+With [nx ny] = [100000 100000], total n = 10000000000, our estimate of the quadrature is 6.6648825065517423027472432
+Time taken for whole computation = 10.7340269088745117187500000 seconds
+With [nx ny] = [1000000 100000], total n = 100000000000, our estimate of the quadrature is 6.6643908967256484388030913
+Time taken for whole computation = 106.9028549194335937500000000 seconds
+With [nx ny] = [1000000 1000000], total n = 1000000000000, our estimate of the quadrature is 6.6643908973177268251220084
+Time taken for whole computation = 1067.7961900234222412109375000 seconds

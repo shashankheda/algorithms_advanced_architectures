@@ -1,0 +1,98 @@
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 0.98 GFlop/s, Time= 0.008 msec, Size= 8192 Ops, WorkgroupSize= 1024 threads/blockMatrixA(16,16), MatrixB(16,16)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 8.47 GFlop/s, Time= 0.008 msec, Size= 65536 Ops, WorkgroupSize= 1024 threads/blockMatrixA(32,32), MatrixB(32,32)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 41.11 GFlop/s, Time= 0.013 msec, Size= 524288 Ops, WorkgroupSize= 1024 threads/blockMatrixA(64,64), MatrixB(64,64)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 95.60 GFlop/s, Time= 0.044 msec, Size= 4194304 Ops, WorkgroupSize= 1024 threads/blockMatrixA(128,128), MatrixB(128,128)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 161.87 GFlop/s, Time= 0.207 msec, Size= 33554432 Ops, WorkgroupSize= 1024 threads/blockMatrixA(256,256), MatrixB(256,256)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 174.71 GFlop/s, Time= 1.537 msec, Size= 268435456 Ops, WorkgroupSize= 1024 threads/blockMatrixA(512,512), MatrixB(512,512)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 172.93 GFlop/s, Time= 12.418 msec, Size= 2147483648 Ops, WorkgroupSize= 1024 threads/blockMatrixA(1024,1024), MatrixB(1024,1024)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 177.19 GFlop/s, Time= 96.955 msec, Size= 17179869184 Ops, WorkgroupSize= 1024 threads/blockMatrixA(2048,2048), MatrixB(2048,2048)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 177.40 GFlop/s, Time= 774.735 msec, Size= 137438953472 Ops, WorkgroupSize= 1024 threads/blockMatrixA(4096,4096), MatrixB(4096,4096)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 175.07 GFlop/s, Time= 6280.402 msec, Size= 1099511627776 Ops, WorkgroupSize= 1024 threads/blockMatrixA(8192,8192), MatrixB(8192,8192)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+cudaMalloc d_A returned error code 46, line(164)
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 1: "Tesla C2070" with compute capability 2.0
+
+cudaMalloc d_A returned error code 46, line(164)

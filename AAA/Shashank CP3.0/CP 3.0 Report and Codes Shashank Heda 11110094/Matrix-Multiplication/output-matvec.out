@@ -1,0 +1,103 @@
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 0.06 GFlop/s, Time= 0.008 msec, Size= 512 Ops, WorkgroupSize= 1024 threads/blockMatrixA(16,16), MatrixB(1,16)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 0.25 GFlop/s, Time= 0.008 msec, Size= 2048 Ops, WorkgroupSize= 1024 threads/blockMatrixA(32,32), MatrixB(1,32)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+cudaMalloc d_A returned error code 46, line(164)
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 3.90 GFlop/s, Time= 0.008 msec, Size= 32768 Ops, WorkgroupSize= 1024 threads/blockMatrixA(128,128), MatrixB(1,128)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 15.86 GFlop/s, Time= 0.008 msec, Size= 131072 Ops, WorkgroupSize= 1024 threads/blockMatrixA(256,256), MatrixB(1,256)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 62.74 GFlop/s, Time= 0.008 msec, Size= 524288 Ops, WorkgroupSize= 1024 threads/blockMatrixA(512,512), MatrixB(1,512)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 249.37 GFlop/s, Time= 0.008 msec, Size= 2097152 Ops, WorkgroupSize= 1024 threads/blockMatrixA(1024,1024), MatrixB(1,1024)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 1011.63 GFlop/s, Time= 0.008 msec, Size= 8388608 Ops, WorkgroupSize= 1024 threads/blockMatrixA(2048,2048), MatrixB(1,2048)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 4123.17 GFlop/s, Time= 0.008 msec, Size= 33554432 Ops, WorkgroupSize= 1024 threads/blockMatrixA(4096,4096), MatrixB(1,4096)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 16925.48 GFlop/s, Time= 0.008 msec, Size= 134217728 Ops, WorkgroupSize= 1024 threads/blockMatrixA(8192,8192), MatrixB(1,8192)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 67803.17 GFlop/s, Time= 0.008 msec, Size= 536870912 Ops, WorkgroupSize= 1024 threads/blockMatrixA(16384,16384), MatrixB(1,16384)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: "Tesla C2070" with compute capability 2.0
+
+Computing result using CUDA Kernel...
+done
+Performance= 1124643.18 GFlop/s, Time= 0.008 msec, Size= 8450000000 Ops, WorkgroupSize= 1024 threads/blockMatrixA(65000,65000), MatrixB(1,65000)
+Checking computed result for correctness: OK
+
+Note: For peak performance, please refer to the matrixMulCUBLAS example.

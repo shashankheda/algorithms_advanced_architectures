@@ -1,0 +1,138 @@
+----------------------------------------------------------------------
+----     ompP General Information     --------------------------------
+----------------------------------------------------------------------
+Start Date      : Thu Mar 21 03:38:15 2013
+End Date        : Thu Mar 21 05:49:30 2013
+Duration        : 7875.03 sec
+Application Name: a.out
+Type of Report  : final
+User Time       : 0.30 sec
+System Time     : 0.00 sec
+Max Threads     : 4
+ompP Version    : 0.7.0
+ompP Build Date : Feb 26 2013 00:12:33
+PAPI Support    : not available
+
+----------------------------------------------------------------------
+----     ompP Region Overview     ------------------------------------
+----------------------------------------------------------------------
+PARALLEL: 1 region:
+ * R00008 fft_parallel.c (175-179)
+
+PARALLEL LOOP: 7 regions:
+ * R00001 fft_parallel.c (108-112)
+ * R00002 fft_parallel.c (123-128)
+ * R00003 fft_parallel.c (130-135)
+ * R00004 fft_parallel.c (138-142)
+ * R00005 fft_parallel.c (148-152)
+ * R00006 fft_parallel.c (158-163)
+ * R00007 fft_parallel.c (166-170)
+
+----------------------------------------------------------------------
+----     ompP Callgraph     ------------------------------------------
+----------------------------------------------------------------------
+
+  Inclusive  (%)   Exclusive  (%)
+7875.03 (100.0%) 7875.03 (100.00%)           [a.out: 4 threads]
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00001 fft_parallel.c (108-112)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00002 fft_parallel.c (123-128)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00003 fft_parallel.c (130-135)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00004 fft_parallel.c (138-142)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00005 fft_parallel.c (148-152)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00006 fft_parallel.c (158-163)
+   0.00 (0.000%)    0.00 (0.000%)  PARLOOP  |-R00007 fft_parallel.c (166-170)
+   0.00 (0.000%)    0.00 (0.000%) PARALLEL  +-R00008 fft_parallel.c (175-179)
+
+----------------------------------------------------------------------
+----     ompP Flat Region Profile (inclusive data)     ---------------
+----------------------------------------------------------------------
+R00001 fft_parallel.c (108-112) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00002 fft_parallel.c (123-128) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00003 fft_parallel.c (130-135) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00004 fft_parallel.c (138-142) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00005 fft_parallel.c (148-152) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00006 fft_parallel.c (158-163) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00007 fft_parallel.c (166-170) PARALLEL LOOP
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+R00008 fft_parallel.c (175-179) PARALLEL
+ TID      execT      execC      bodyT   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00
+
+----------------------------------------------------------------------
+----     ompP Callgraph Region Profiles (incl./excl. data)     -------
+----------------------------------------------------------------------
+
+[*00] a.out
+[=01] R00001 fft_parallel.c (108-112) PARALLEL LOOP
+ TID      execT      execC    bodyT/I    bodyT/E   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00       0.00
+
+[*00] a.out
+[=01] R00002 fft_parallel.c (123-128) PARALLEL LOOP
+ TID      execT      execC    bodyT/I    bodyT/E   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   1       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   2       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+   3       0.00          1       0.00       0.00       0.00       0.00       0.00       0.00
+ SUM       0.00          4       0.00       0.00       0.00       0.00       0.00       0.00
+
+[*00] a.out
+[=01] R00003 fft_parallel.c (130-135) PARALLEL LOOP
+ TID      execT      execC    bodyT/I    bodyT/E   exitBarT   startupT   shutdwnT      taskT
+   0       0.00          1    
